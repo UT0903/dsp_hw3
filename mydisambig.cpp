@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
+#include <vector>
 #include <fstream>
 #include "Ngram.h"
 
@@ -36,7 +37,8 @@ int main(){
     for(int i = 0; i < TextData.size(); i++){
         vector <vector<double>> delta;
         for(int j = 0; j < TextData[i].size(); j++){ //time j
-            
+            vector <double> tmp;
+
         }
     }
 }
