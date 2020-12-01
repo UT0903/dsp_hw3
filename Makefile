@@ -29,8 +29,9 @@ map:
 	@#python3 mapping.py $(FROM) $(TO)
 mytest:
 	perl separator_big5.pl corpus.txt > corpus_sep.txt
+	perl separator_big5.pl test_data/example.txt > example_sep.txt
 	ngram-count -text corpus_sep.txt -write corpus_count.txt -order 2
-	ngram-count -read corpus_count.txt -lm bigram.lm -order 3 -unk
-	disambig -text ./test_data/example.txt -map ZhuYin-Big5.map -lm bigram.lm -order 2 > output
+	ngram-count -read corpus_count.txt -lm bigram.lm -order 2 -unk
+	disambig -text example_sep.txt -map ZhuYin-Big5.map -lm bigram.lm -order 2 > output
 clean:
 	$(RM) $(OBJ) $(TARGET)
