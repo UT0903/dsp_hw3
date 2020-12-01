@@ -1,5 +1,6 @@
 import sys
 
+
 dic = {}
 with open('Big5-ZhuYin.map','r', encoding = 'big5-hkscs') as fp:
 	all_lines = fp.readlines()
