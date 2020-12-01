@@ -34,7 +34,6 @@ mytest:
 	ngram-count -read corpus_count.txt -lm bigram.lm -order 2 -unk
 	disambig -text example_sep.txt -map ZhuYin-Big5.map -lm bigram.lm -order 2 > output
 test:
-	g++ mydisambig.cpp -o mydisambig
 	./mydisambig -text example_sep.txt -map ZhuYin-Big5.map -lm bigram.lm -order 2 > output
 clean:
 	$(RM) $(OBJ) $(TARGET)

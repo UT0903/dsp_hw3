@@ -11,7 +11,7 @@ with open('Big5-ZhuYin.map','r', encoding = 'big5-hkscs') as fp:
 		for sec in secs:
 			if sec[0] not in dic:
 				dic[sec[0]] = [first]
-			else:
+			elif first not in dic[sec[0]]:
 				dic[sec[0]].append(first)
 
 
