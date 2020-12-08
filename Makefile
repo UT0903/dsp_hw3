@@ -20,11 +20,8 @@ TO ?= ZhuYin-Big5.map
 all: $(TARGET)
 
 
-mydisambig: disambig.o $(SRC_PATH)/mydisambig.cpp -loolm -ldstruct -lmisc
+mydisambig: $(SRC_PATH)/mydisambig.cpp -loolm -ldstruct -lmisc
 	$(CXX) $(CXXFLAGS) $(LDFLAGS) $^ -o $@
-
-disambig.o: $(INC_PATH)/mydisambig.hpp $(SRC_PATH)/mydisambig.cpp
-	$(CXX) $(CXXFLAGS) -c $^
 
 map:
 	python3 $(SRC_PATH)/mapping.py $(FROM) $(TO)

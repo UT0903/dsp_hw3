@@ -43,7 +43,7 @@ int main(int argc, char **argv){
     lmFile.close();
 
     fstream output_file;
-    output_file.open(out_file, ios::trunc);
+    output_file.open(out_file, ios::trunc | ios::out);
 
     Read_text_file(text_file); //read text file
     Read_map_file(map_file); //read map file
